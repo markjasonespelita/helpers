@@ -1,5 +1,5 @@
-#ifndef STRING_H
-#define STRING_H
+#ifndef HELPER_STRING_H
+#define HELPER_STRING_H
 
 void helperString(char _string[], int size);
 
