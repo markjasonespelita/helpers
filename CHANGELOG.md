@@ -1,3 +1,10 @@
+# [1.1.0](https://github.com/markjasonespelita/helpers/compare/v1.0.0...v1.1.0) (2026-05-13)
+
+
+### Features
+
+* added shell script helpers. ([e0d0cda](https://github.com/markjasonespelita/helpers/commit/e0d0cda834e2b8bf96a55bdb31ffdcc675227f2f))
+
 # 1.0.0 (2026-05-11)
 
 
