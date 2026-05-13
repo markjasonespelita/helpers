@@ -1,0 +1,44 @@
+#!/bin/bash
+
+echo "Check Database"
+echo "-----------------------------------"
+
+sudo -v
+
+read -p "MySQL Username: " mysqlUser
+read -s -p "MySQL Password: " mysqlPass
+echo ""
+
+read -p "What database?: " databaseName
+
+clear
+
+echo "Database: $databaseName"
+echo "---------------------------------------------"
+printf "%-30s %s\n" "TABLE" "TOTAL RECORDS"
+echo "---------------------------------------------"
+
+total_all=0
+results=""
+
+tables=$(sudo mysql -u"$mysqlUser" -p"$mysqlPass" -N \
+-e "SHOW TABLES FROM \`$databaseName\`;" 2>/dev/null)
+
+for table in $tables
+do
+    count=$(sudo mysql -u"$mysqlUser" -p"$mysqlPass" -N \
+    -e "SELECT COUNT(*) FROM \`$databaseName\`.\`$table\`;" 2>/dev/null)
+
+    results="${results}${count}|${table}\n"
+
+    total_all=$((total_all + count))
+done
+
+echo -e "$results" | sort -n | while IFS="|" read count table
+do
+    [ -z "$table" ] && continue
+    printf "%-30s %s\n" "$table" "$count"
+done
+
+echo "---------------------------------------------"
+printf "%-30s %s\n" "TOTAL" "$total_all"
