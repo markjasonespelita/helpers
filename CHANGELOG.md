@@ -1,3 +1,10 @@
+## [1.1.1](https://github.com/markjasonespelita/helpers/compare/v1.1.0...v1.1.1) (2026-05-20)
+
+
+### Bug Fixes
+
+* fixed helpers open remote server ([0f19b91](https://github.com/markjasonespelita/helpers/commit/0f19b91020fe4aff0ce746d10b8d4448694efaba))
+
 # [1.1.0](https://github.com/markjasonespelita/helpers/compare/v1.0.0...v1.1.0) (2026-05-13)
 
 
